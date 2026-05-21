@@ -10,7 +10,23 @@ def db_connect
 end
 
 get '/' do
-  "DB connection success!"
-  result = db_connect.exec("SELECT * FROM bicycles")
-  result.to_a.to_s
+  erb :index
+end
+
+get '/bikes' do
+  @bikes = db_connect.exec("SELECT * FROM bicycles ORDER BY name")
+  erb :bikes
+end
+
+get '/bikes/:id' do
+  result = db_connect.exec_params(
+    "SELECT * FROM bicycles WHERE id = $1",
+    [params[:id]]
+  )
+
+  halt 404 if result.ntuples == 0
+
+  @bike = result.first
+
+  erb :bike
 end
