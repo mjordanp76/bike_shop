@@ -8,6 +8,7 @@ A basic website for a fictitious bicycle brand "Hobby Bikes", built to practice 
 - Product catalog
 - Shopping cart functionality
 - Fake order placement
+- Database containing users, bicycles, carts, and orders
 - Basic SEO-friendly structure
 
 ## Tech Stack
