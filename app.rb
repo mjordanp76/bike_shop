@@ -22,6 +22,15 @@ helpers do
 
     result.first
   end
+
+end
+
+helpers do
+
+  def require_login
+    redirect '/login' unless current_user
+  end
+  
 end
 
 get '/' do
