@@ -8,8 +8,8 @@ A basic website for a fictitious bicycle brand "Hobby Bikes", built to practice 
 - Product catalog
 - Shopping cart functionality
 - Fake order placement
-- Database containing users, bicycles, carts, and orders
 - Basic SEO-friendly structure
+- Database containing users, bicycles, carts, and orders
 
 ## Tech Stack
 - Ruby
@@ -20,6 +20,7 @@ A basic website for a fictitious bicycle brand "Hobby Bikes", built to practice 
     - puma
 - ERB (Embedded Ruby)
 - HTML / CSS
+- PostgrSQL database
 
 ## TO-DO
 - Add a few more bicycles to the catalog
