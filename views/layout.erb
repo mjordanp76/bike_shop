@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title><%= @title || "Bike Shop" %></title>
+
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Bike Shop</h1>
+
+    <nav>
+      <a href="/">Home</a>
+      <a href="/bikes">Bikes</a>
+    </nav>
+
+    <hr>
+  </header>
+
+  <main>
+    <%= yield %>
+  </main>
+
+</body>
+</html>
