@@ -1,0 +1,14 @@
+# Environment variables
+.env
+
+# Bundler
+/vendor/bundle
+
+# Logs
+*.log
+
+# macOS
+.DS_Store
+
+# Temporary files
+tmp/
