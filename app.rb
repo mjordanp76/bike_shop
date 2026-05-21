@@ -3,7 +3,7 @@ require 'pg'
 require 'bcrypt'
 require 'dotenv/load'
 
-def db
+def db_connect
   @db ||= PG.connect(
     dbname: 'bike_shop'
   )
