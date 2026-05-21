@@ -11,4 +11,6 @@ end
 
 get '/' do
   "DB connection success!"
+  result = db_connect.exec("SELECT * FROM bicycles")
+  result.to_a.to_s
 end
