@@ -4,5 +4,5 @@ require 'bcrypt'
 require 'dotenv/load'
 
 get '/' do
-  "Hobby Bikes brand new site COMING SOON!"
+  erb :index
 end
