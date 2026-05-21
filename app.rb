@@ -197,3 +197,16 @@ post '/cart/add/:bike_id' do
   redirect '/cart'
 
 end
+
+# remove items from cart
+post '/cart/remove/:item_id' do
+  require_login
+
+  db_connect.exec_params(
+    "DELETE FROM cart_items
+     WHERE id = $1",
+    [params[:item_id]]
+  )
+  redirect '/cart'
+
+end
