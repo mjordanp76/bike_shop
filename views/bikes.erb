@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Hobby Bikes Catalog</title>
+    </head>
+    <body>
+        <h1>Hobby Bikes Catalog</h1>
+        <% @bikes.each do |bike| %>
+        <div>
+            <h2><%= bike['name'] %></h2>
+            <p><%= bike['descrption'] %></p>
+            <p>Price: $<%= bike['price'] %></p>
+            <p>In stock: <%= bike['inventory'] %></p>
+        </div>
+        <hr>
+        <% end %>
+    </body>
+</html>
