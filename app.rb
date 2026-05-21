@@ -5,7 +5,7 @@ require 'dotenv/load'
 
 def db_connect
   @db ||= PG.connect(
-    dbname: 'bike_shop'
+    dbname: ENV['DATABASE_NAME']
   )
 end
 
