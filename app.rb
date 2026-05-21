@@ -5,6 +5,7 @@ require 'dotenv/load'
 
 enable :sessions
 
+# connect to database
 def db_connect
   @db ||= PG.connect(
     dbname: ENV['DATABASE_NAME']
@@ -12,6 +13,8 @@ def db_connect
 end
 
 helpers do
+
+  # checks if a user is logged in
   def current_user
     return nil unless session[:user_id]
 
@@ -23,25 +26,45 @@ helpers do
     result.first
   end
 
-end
-
-helpers do
-
+  # if a user that isn't logged in tries to access a cart/order/etc., require login first
   def require_login
     redirect '/login' unless current_user
   end
-  
+
+  # checks if cart for user exists or creates a new cart
+  def current_cart
+  result = db_connect.exec_params(
+    "SELECT * FROM carts WHERE user_id = $1",
+    [current_user['id']]
+  )
+
+    if result.ntuples > 0
+      result.first
+    else
+      new_cart = db_connect.exec_params(
+        "INSERT INTO carts (user_id)
+        VALUES ($1)
+        RETURNING *",
+        [current_user['id']]
+      )
+
+      new_cart.first
+    end
+  end
+
 end
 
 get '/' do
   erb :index
 end
 
+# view catalog of bikes
 get '/bikes' do
   @bikes = db_connect.exec("SELECT * FROM bicycles ORDER BY name")
   erb :bikes
 end
 
+# view individual bikes
 get '/bikes/:id' do
   result = db_connect.exec_params(
     "SELECT * FROM bicycles WHERE id = $1",
@@ -55,6 +78,7 @@ get '/bikes/:id' do
   erb :bike
 end
 
+# registration
 get '/register' do
   erb :register
 end
@@ -76,6 +100,7 @@ post '/register' do
   redirect '/'
 end
 
+# login
 get '/login' do
   erb :login
 end
@@ -102,7 +127,73 @@ post '/login' do
   end
 end
 
+# logout
 get '/logout' do
   session.clear
   redirect '/'
+end
+
+# view cart
+get '/cart' do
+  require_login
+
+  cart = current_cart
+
+  @items = db_connect.exec_params(
+    "
+    SELECT
+      cart_items.id,
+      cart_items.quantity,
+      bicycles.name,
+      bicycles.price,
+      bicycles.id AS bicycle_id
+    FROM cart_items
+    JOIN bicycles
+      ON bicycles.id = cart_items.bicycle_id
+    WHERE cart_items.cart_id = $1
+    ",
+    [cart['id']]
+  )
+  erb :cart
+
+end
+
+# add items to cart
+post '/cart/add/:bike_id' do
+  require_login
+
+  bike_id = params[:bike_id]
+  cart = current_cart
+  existing_item = db_connect.exec_params(
+    "SELECT * FROM cart_items
+     WHERE cart_id = $1
+     AND bicycle_id = $2",
+    [
+      cart['id'],
+      bike_id
+    ]
+  )
+
+  if existing_item.ntuples > 0
+    db_connect.exec_params(
+      "UPDATE cart_items
+       SET quantity = quantity + 1
+       WHERE id = $1",
+      [
+        existing_item.first['id']
+      ]
+    )
+  else
+    db_connect.exec_params(
+      "INSERT INTO cart_items
+       (cart_id, bicycle_id, quantity)
+       VALUES ($1, $2, 1)",
+      [
+        cart['id'],
+        bike_id
+      ]
+    )
+  end
+  redirect '/cart'
+
 end

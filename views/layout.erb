@@ -21,6 +21,12 @@
           <%= current_user['email'] %>
         </span>
 
+        <% if current_user %>
+
+          <a href="/cart">Cart</a>
+
+        <% end %>
+
         <a href="/logout">Logout</a>
 
       <% else %>

@@ -3,4 +3,14 @@
 
 <p><%= @bike['description'] %></p>
 <p>$<%= @bike['price'] %></p>
+
+<form
+  method="post"
+  action="/cart/add/<%= @bike['id'] %>">
+  <button type="submit">
+    Add to Cart
+  </button>
+
+</form>
+
 <p>In stock: <%= @bike['inventory'] %></p>
