@@ -7,7 +7,11 @@
         <h1>Hobby Bikes Catalog</h1>
         <% @bikes.each do |bike| %>
         <div>
-            <h2><%= bike['name'] %></h2>
+            <h2>
+                <a href="/bikes/<%= bike['id'] %>">
+                <%= bike['name'] %>
+                </a>
+            </h2>
             <p><%= bike['descrption'] %></p>
             <p>Price: $<%= bike['price'] %></p>
             <p>In stock: <%= bike['inventory'] %></p>

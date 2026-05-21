@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title><%= @bike['name'] %></title>
+    </head>
+    <body>
+        <a href= "/bikes">← Back to Catalog</a>
+        <h1><%= @bike['name'] %></h1>
+        <p><%= @bike['description'] %></p>
+        <p>$<%= @bike['price'] %></p>
+        <p>In stock: <%= @bike['inventory'] %></p>
+    </body>
+</html>
