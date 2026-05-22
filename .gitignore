@@ -3,9 +3,11 @@
 
 # Bundler
 /vendor/bundle
+/.bundle
 
 # Logs
 *.log
+/log
 
 # macOS
 .DS_Store
