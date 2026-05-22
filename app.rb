@@ -6,7 +6,7 @@ require 'dotenv/load' unless ENV['RAILWAY_ENVIRONMENT']
 enable :sessions
 
 set :bind, "0.0.0.0"
-set :port, ENV.fetch("PORT", 4567)
+set :port, ENV.fetch("PORT", 8080)
 
 set :protection, host_authorization: false
 set :environment, ENV.fetch("RACK_ENV", "production")
