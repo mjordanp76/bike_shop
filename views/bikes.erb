@@ -7,7 +7,12 @@
         <%= bike['name'] %>
         </a>
     </h2>
-    <p><%= bike['descrption'] %></p>
+    <img
+    src="<%= bike['img_url'] %>"
+    alt="<%= bike['name'] %>"
+    width="300"
+  >
+    <p><%= bike['description'] %></p>
     <p>Price: $<%= bike['price'] %></p>
     <p>In stock: <%= bike['inventory'] %></p>
 </div>
