@@ -1,15 +1,20 @@
 require 'sinatra'
 require 'pg'
 require 'bcrypt'
-require 'dotenv/load'
+require 'dotenv/load' unless ENV['RAILWAY_ENVIRONMENT']
 
 enable :sessions
 
+set :bind, "0.0.0.0"
+set :port, ENV.fetch("PORT", 4567)
+
 # connect to database
 def db_connect
-  @db ||= PG.connect(
-    dbname: ENV['DATABASE_NAME']
-  )
+  @db ||= if ENV['DATABASE_URL']
+    PG.connect(ENV['DATABASE_URL'])   # Railway / production
+  else
+    PG.connect(dbname: ENV['DATABASE_NAME'])  # local dev
+  end
 end
 
 helpers do
