@@ -15,14 +15,15 @@ A simple e-commerce website for the fictional bicycle brand Hobby Bikes, built t
 
 ## Tech Stack
 - Ruby
-- Sinatra
 - ERB (Embedded Ruby)
 - HTML / CSS
 - PostgreSQL database
 
 ### Gems
+- Sinatra
 - pg
 - bcrypt
+- dotenv
 - rackup
 - puma
 
@@ -55,6 +56,8 @@ A simple e-commerce website for the fictional bicycle brand Hobby Bikes, built t
 
 ## Challenges & Lessons Learned
 
+- Learned to manage Ruby versions with rbenv and isolate project dependencies using Bundler and a Gemfile.
 - Implemented secure password hashing with bcrypt.
 - Built session-based authentication in Sinatra.
 - Improved page structure and metadata with basic SEO principles.
+- Became more familiar with the Ruby language.
