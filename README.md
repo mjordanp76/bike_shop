@@ -2,7 +2,7 @@
 
 A simple e-commerce website for the fictional bicycle brand Hobby Bikes, built to practice Ruby, Sinatra, ERB templating, PostgreSQL, and basic SEO principles.
 
-**Live Demo:** [Hobby Bikes](bikeshop-production-3aac.up.railway.app)
+**Live Demo:** [Hobby Bikes](https://bikeshop-production-3aac.up.railway.app)
 
 ## Features
 - Home page
