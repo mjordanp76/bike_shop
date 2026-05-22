@@ -59,6 +59,6 @@ A simple e-commerce website for the fictional bicycle brand Hobby Bikes, built t
 - Learned to manage Ruby versions with rbenv and isolate project dependencies using Bundler and a Gemfile.
 - Implemented secure password hashing with bcrypt.
 - Built session-based authentication in Sinatra.
-- Improved page structure and metadata with basic SEO principles.
+- Utilized GSC and Ahrefs to improve page structure and metadata with basic SEO principles.
 - Became more familiar with the Ruby language.
 - Deployed site using Railway for public visibility.
