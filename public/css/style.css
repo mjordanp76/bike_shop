@@ -1,24 +1,129 @@
 body {
-    background-color: #242424;
-    color: #faf1d9;
+    background-color: #fff;
+    color: #000;
 
     font-family:
         Arial,
         Helvetica,
         sans-serif;
 
-    max-width: 1200px;
+    margin: 0;
+}
 
-    margin: auto;
-
-    padding: 2rem;
+.container {
+  width: 95%;
+  max-width: 1900px;
+  margin: auto;
+ 
+  padding: 2rem;
 }
 
 a {
-    color: #f0f0f0;
+    color: #000;
     text-decoration: none;
 }
 
 a:hover {
-    color: white;
+    color: #2af;
+}
+
+.bike-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  width: 100%;
+}
+
+.bike-card {
+  text-align: center;
+  padding-bottom: 50px;
+}
+
+.bike-image-link {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+
+  height: 250px;
+}
+
+.bike-image {
+  max-height: 100%;
+  width: auto;
+}
+
+.bike-overlay {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 1rem;
+  border-radius: 15px;
+  box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.5);
+
+  background: rgba(0, 0, 0, 0.50);
+
+  opacity: 0;
+  transition: opacity .3s ease;
+
+  color: #fff;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.bike-image-link:hover .bike-overlay {
+  opacity: 1;
+}
+
+.bike-card h2 {
+  margin-top: 1rem;
+  margin-bottom: .5rem;
+}
+
+.bike-card h2 a {
+  color: #000;
+  text-decoration: none;
+}
+
+.bike-card h2 a:hover {
+  text-decoration: underline;
+}
+
+.price {
+  color: #000;
+  font-size: 1.1rem;
+}
+
+.bike-title {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.bike-detail {
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.bike-photo {
+  flex: 3;
+}
+
+.bike-photo img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.bike-info {
+  flex: 2;
+  font-size: 1.1rem;
+  line-height: 1.8;
 }

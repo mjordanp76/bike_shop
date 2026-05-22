@@ -1,10 +1,24 @@
 <a href= "/bikes">← Back to Catalog</a>
-<h2><%= @bike['name'] %></h2>
 
-<p><%= @bike['description'] %></p>
-<p>$<%= @bike['price'] %></p>
+<div class="bike-detail">
 
-<form
+  <div class="bike-photo">
+    <img
+      src="<%= @bike['img_url'] %>"
+      alt="<%= @bike['name'] %>"
+    >
+  </div>
+
+  <div class="bike-info">
+    <h1 class="bike-title">
+      <%= @bike['name'] %>
+    </h1>
+    <p><%= @bike['description'] %></p>
+
+    <p class="price">
+      $<%= @bike['price'] %>
+    </p>
+    <form
   method="post"
   action="/cart/add/<%= @bike['id'] %>">
   <button type="submit">
@@ -14,3 +28,6 @@
 </form>
 
 <p>In stock: <%= @bike['inventory'] %></p>
+  </div>
+
+</div>
