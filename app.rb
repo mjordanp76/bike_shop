@@ -9,6 +9,7 @@ set :bind, "0.0.0.0"
 set :port, ENV.fetch("PORT", 4567)
 
 set :protection, host_authorization: false
+set :environment, ENV.fetch("RACK_ENV", "production")
 
 # connect to database
 def db_connect
