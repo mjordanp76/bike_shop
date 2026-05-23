@@ -7,41 +7,42 @@
   <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
+  <div class="container">
+    <header>
+      <h1>Hobby Bikes</h1>
 
-  <header>
-    <h1>Bike Shop</h1>
+      <nav class="navbar">
+        <div class="nav-left">
+          <a href="/">Home</a>
+          <a href="/bikes">Bikes</a>
+        </div>
 
-    <nav>
-      <a href="/">Home</a>
-      <a href="/bikes">Bikes</a>
+        <div class="nav-right">
+          <% if current_user %>
 
-      <% if current_user %>
-        <span>
-          Logged in as
-          <%= current_user['email'] %>
-        </span>
+            <span>
+              Logged in as <%= current_user['email'] %>
+            </span>
 
-        <% if current_user %>
+            <a href="/cart">Cart</a>
+            <a href="/logout">Logout</a>
 
-          <a href="/cart">Cart</a>
+          <% else %>
 
-        <% end %>
+            <a href="/login">Login</a>
+            <a href="/register">Register</a>
 
-        <a href="/logout">Logout</a>
+          <% end %>
+        </div>
 
-      <% else %>
-        <a href="/login">Login</a>
-        <a href="/register">Register</a>
+      </nav>
 
-      <% end %>
-    </nav>
+      <hr>
+    </header>
 
-    <hr>
-  </header>
-
-  <main>
-    <%= yield %>
-  </main>
-
+    <main>
+      <%= yield %>
+    </main>
+  </div>
 </body>
 </html>

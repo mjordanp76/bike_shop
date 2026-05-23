@@ -18,6 +18,10 @@ body {
   padding: 2rem;
 }
 
+h1 {
+    text-align: center;
+}
+
 a {
     color: #000;
     text-decoration: none;
@@ -25,6 +29,21 @@ a {
 
 a:hover {
     color: #2af;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
+}
+
+.nav-left,
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
 }
 
 .bike-grid {
