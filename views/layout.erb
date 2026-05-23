@@ -7,42 +7,42 @@
   <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-  <div class="container">
-    <header>
-      <h1>Hobby Bikes</h1>
+  <header class="site-header">
+    <a href="/" class="brand-link">
+      <img src="/images/brand.png" class="brand" alt="Hobby Bikes">
+    </a>
 
-      <nav class="navbar">
-        <div class="nav-left">
-          <a href="/">Home</a>
-          <a href="/bikes">Bikes</a>
-        </div>
+    <nav class="navbar">
+      <div class="nav-left">
+        <a href="/">Home</a>
+        <a href="/bikes">Bikes</a>
+      </div>
 
-        <div class="nav-right">
-          <% if current_user %>
+      <div class="nav-right">
+        <% if current_user %>
 
-            <span>
-              Logged in as <%= current_user['email'] %>
-            </span>
+          <span>
+            Logged in as <%= current_user['email'] %>
+          </span>
 
-            <a href="/cart">Cart</a>
-            <a href="/logout">Logout</a>
+          <a href="/cart">Cart</a>
+          <a href="/logout">Logout</a>
 
-          <% else %>
+        <% else %>
 
-            <a href="/login">Login</a>
-            <a href="/register">Register</a>
+          <a href="/login">Login</a>
+          <a href="/register">Register</a>
 
-          <% end %>
-        </div>
+        <% end %>
+      </div>
 
-      </nav>
+    </nav>
 
-      <hr>
-    </header>
+    <hr>
+  </header>
 
-    <main>
-      <%= yield %>
-    </main>
-  </div>
+  <main>
+    <%= yield %>
+  </main>
 </body>
 </html>
