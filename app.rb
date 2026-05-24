@@ -68,6 +68,8 @@ end
 
 # view catalog of bikes
 get '/bikes' do
+  @title = "Affordable bikes for every type of rider (beginner to expert)"
+  @desription = "Browse road, gravel, MTB, commuter, e-bikes."
   @bikes = db_connect.exec("SELECT * FROM bicycles ORDER BY name")
   erb :bikes
 end
@@ -81,6 +83,8 @@ get '/bikes/:slug' do
 
   halt 404 unless @bike
 
+  @title = @bike['seo_title']
+  @description = @bike['seo_description']
   erb :bike
 end
 

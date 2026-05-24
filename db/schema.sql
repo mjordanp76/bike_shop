@@ -20,7 +20,9 @@ CREATE TABLE bicycles (
     price numeric(10,2) NOT NULL,
     inventory integer NOT NULL,
     img_url text,
-    slug text
+    slug text,
+    seo_title text,
+    seo_description text
 );
 
 CREATE TABLE carts (
