@@ -73,15 +73,13 @@ get '/bikes' do
 end
 
 # view individual bikes
-get '/bikes/:id' do
-  result = db_connect.exec_params(
-    "SELECT * FROM bicycles WHERE id = $1",
-    [params[:id]]
-  )
+get '/bikes/:slug' do
+  @bike = db_connect.exec_params(
+    "SELECT * FROM bicycles WHERE slug = $1",
+    [params[:slug]]
+  ).first
 
-  halt 404 if result.ntuples == 0
-
-  @bike = result.first
+  halt 404 unless @bike
 
   erb :bike
 end

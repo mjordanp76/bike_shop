@@ -4,7 +4,7 @@
         <% @bikes.each do |bike| %>
             <div class="bike-card">
 
-                <a href="/bikes/<%= bike['id'] %>" class="bike-image-link">
+                <a href="/bikes/<%= bike['slug'] %>" class="bike-image-link">
                     <img
                     src="<%= bike['img_url'] %>"
                     alt="<%= bike['name'] %>"
@@ -12,7 +12,7 @@
                     >
 
                     <div class="bike-overlay">
-                    <p><%= bike['description'] %></p>
+                    <p><%= bike['short_description'] %></p>
                     </div>
                 </a>
 

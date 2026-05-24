@@ -170,3 +170,9 @@ a:hover {
     font-size: 1.1rem;
     line-height: 1.8;
 }
+
+.bike-description {
+    text-align: justify;
+    font-size: 1.1rem;
+    line-height: 1.5rem;
+}

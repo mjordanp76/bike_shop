@@ -13,21 +13,18 @@
     <h1 class="bike-title">
       <%= @bike['name'] %>
     </h1>
-    <p><%= @bike['description'] %></p>
-
+    <p class="bike-description"><%= @bike['long_description'].gsub("\n", "<br><br>") %></p>
     <p class="price">
       $<%= @bike['price'] %>
     </p>
     <form
-  method="post"
-  action="/cart/add/<%= @bike['id'] %>">
-  <button type="submit">
-    Add to Cart
-  </button>
-
-</form>
-
-<p>In stock: <%= @bike['inventory'] %></p>
+      method="post"
+      action="/cart/add/<%= @bike['id'] %>">
+      <button type="submit">
+        Add to Cart
+      </button>
+    </form>
+    <p>In stock: <%= @bike['inventory'] %></p>
   </div>
 
 </div>
