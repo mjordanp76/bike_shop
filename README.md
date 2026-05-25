@@ -55,5 +55,6 @@ A simple e-commerce website for the fictional bicycle brand Hobby Bikes, built t
     - Unique meta descriptions for each page to incraese click-through rates
     - Slugs instead of simple id's in URLs
     - Specifc CTAs to drive results
+    - Image SEO (descriptive alt texts and file names, compressed files)
 - Became more familiar with the Ruby language.
 - Deployed site using Railway for public visibility.
