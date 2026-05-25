@@ -69,7 +69,7 @@ end
 # view catalog of bikes
 get '/bikes' do
   @title = "Affordable bikes for every type of rider (beginner to expert)"
-  @desription = "Browse road, gravel, MTB, commuter, e-bikes."
+  @desription = "Browse all Hobby road, gravel, MTB, commuter, and e-bikes."
   @bikes = db_connect.exec("SELECT * FROM bicycles ORDER BY name")
   erb :bikes
 end
