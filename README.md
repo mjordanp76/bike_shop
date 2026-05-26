@@ -52,9 +52,10 @@ A simple e-commerce website for the fictional bicycle brand Hobby Bikes, built t
 - Applied some basic principles to improve SEO:
     - Title, meta, and heading tags with keywords
     - Keywords with easy/medium KD, avoiding hard KD keywords
-    - Unique meta descriptions for each page to incraese click-through rates
+    - Unique meta descriptions for each page to increase CTR
     - Slugs instead of simple id's in URLs
     - Specifc CTAs to drive results
     - Image SEO (descriptive alt texts and file names, compressed files)
+    - Mobile-first design
 - Became more familiar with the Ruby language.
 - Deployed site using Railway for public visibility.
