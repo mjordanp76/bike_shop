@@ -53,7 +53,7 @@ A simple e-commerce website for the fictional bicycle brand Hobby Bikes, built t
     - Title, meta, and heading tags with keywords
     - Keywords with easy/medium KD, avoiding hard KD keywords
     - Unique meta descriptions for each page to increase CTR
-    - Slugs instead of simple id's in URLs
+    - Slugs instead of simple IDs in URLs
     - Specifc CTAs to drive results
     - Image SEO (descriptive alt texts and file names, compressed files)
     - Mobile-first design
